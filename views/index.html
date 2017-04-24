@@ -5,14 +5,16 @@
     <title>Mean APP</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" type="text/javascript"></script>
-    <script src="../public/js/main.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
 
 </head>
-<body>
-    <p>{{greet}}</p>
+<body ng-app="app">
+    <div ng-controller="mainCntrl" class="">
+            <p>{{greet}}</p>
+    </div>
 </body>
 </html>

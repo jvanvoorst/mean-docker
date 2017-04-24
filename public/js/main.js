@@ -1,5 +1,5 @@
 var app = angular.module('app', []);
 
-app.constroller('mainCntrl', ['$scope', function($scope) {
+app.controller('mainCntrl', ['$scope', function($scope) {
     $scope.greet = 'Hello Angular';
 }]);

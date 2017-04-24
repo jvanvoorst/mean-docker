@@ -3,7 +3,7 @@ app:
     links:
         - db
     ports:
-        - "80:3000"
+        - "9080:3000"
     volumes:
         - .:/app
 db:
