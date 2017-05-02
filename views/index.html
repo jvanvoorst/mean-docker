@@ -5,16 +5,36 @@
     <title>Mean APP</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
     <script src="js/main.js" type="text/javascript"></script>
 
 </head>
 <body ng-app="app">
-    <div ng-controller="mainCntrl" class="">
-            <p>{{name}}</p>
+
+    <header>
+		<nav class="navbar navbar-default">
+    		<div class="container">
+    			<div class="navbar-header">
+    				<a class="navbar-brand" href="/">AngularJS</a>
+    			</div>
+
+    			<ul class="nav navbar-nav navbar-right">
+    				<li><a href="#!"><i class="fa fa-home"></i> Main</a></li>
+                    <li><a href="#!/second"><i></i> Second</a></li>
+    			</ul>
+    		</div>
+		</nav>
+	</header>
+
+    <div class="container">
+            <div ng-view></div>
     </div>
+
 </body>
 </html>
+ 
