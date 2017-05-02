@@ -9,3 +9,5 @@ app.controller('mainCntrl', ['$scope', ($scope) => {
 app.controller('secondCntrl', ['$scope', ($scope) => {
     $scope.name = 'Second';
 }]);
+
+//adding something
