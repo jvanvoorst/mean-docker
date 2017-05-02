@@ -1,5 +1,11 @@
-var app = angular.module('app', []);
+/* jshint esversion: 6 */
 
-app.controller('mainCntrl', ['$scope', function($scope) {
-    $scope.greet = 'Hello Angular';
+const app = angular.module('app', []);
+
+app.controller('mainCntrl', ['$scope', ($scope) => {
+    $scope.name = 'Hello Angular';
+}]);
+
+app.controller('secondCntrl', ['$scope', ($scope) => {
+    $scope.name = 'Second';
 }]);
