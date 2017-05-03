@@ -27,20 +27,27 @@ app.service('nameService', function() {
 });
 
 app.controller('mainCntrl', ['$scope', '$log', 'nameService', function($scope, $log, nameService) {
-    $scope.name = nameService.name;
 
-    $scope.$watch('name', () => nameService.name = $scope.name );
-
-    $log.log(nameService.name);
-    $log.log(nameService.nameLength());
+    $scope.person = {
+        name: 'John Doe',
+        address: '555 Main St., New York, NY 11111'
+    }
 
 }]);
 
 app.controller('secondCntrl', ['$scope', '$log', '$routeParams', 'nameService', function($scope, $log, $routeParams, nameService) {
-    $scope.name = nameService.name;
 
-    $scope.$watch('name', () => nameService.name = $scope.name );
-
-    $scope.num = $routeParams.num || 'default';
 
 }]);
+
+app.directive('searchResult', function() {
+    return {
+        restrict: 'AE',
+        templateUrl: 'directives/searchResults.html',
+        replace: true,
+        scope: {
+            personName: '@',
+            personAddress: '@'
+        }
+    }
+})
