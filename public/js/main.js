@@ -28,9 +28,26 @@ app.service('nameService', function() {
 
 app.controller('mainCntrl', ['$scope', '$log', 'nameService', function($scope, $log, nameService) {
 
-    $scope.person = {
-        name: 'John Doe',
-        address: '555 Main St., New York, NY 11111'
+    $scope.people = [
+        {
+            name: 'John Doe',
+            address: '555 Main St.',
+            city: 'New York, NY 11111'
+        },
+        {
+            name: 'Jim Doe',
+            address: '555 Main St.',
+            city: 'New York, NY 11111'
+        },
+        {
+            name: 'Jane Doe',
+            address: '555 Main St.',
+            city: 'New York, NY 11111'
+        }
+    ]
+
+    $scope.formatAddress = function(person) {
+        return person.name + person.address + person.city
     }
 
 }]);
@@ -46,8 +63,9 @@ app.directive('searchResult', function() {
         templateUrl: 'directives/searchResults.html',
         replace: true,
         scope: {
-            personName: '@',
-            personAddress: '@'
-        }
+            personObject: '=',
+            formattedAddressFunction: '&'
+        },
+        transclude: true
     }
 })

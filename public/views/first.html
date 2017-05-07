@@ -3,13 +3,6 @@
 
 <h3>Search Results</h3>
 
-<div class="list-group">
-    <search-result person-name="{{person.name}}" person-address="{{person.address}}"></search-result>
-    <search-result person-name="{{person.name}}" person-address="{{person.address}}"></search-result>
-    <search-result person-name="{{person.name}}" person-address="{{person.address}}"></search-result>
-    <search-result person-name="{{person.name}}" person-address="{{person.address}}"></search-result>
-    <search-result person-name="{{person.name}}" person-address="{{person.address}}"></search-result>
-    <search-result person-name="{{person.name}}" person-address="{{person.address}}"></search-result>
-
-
+<div class="list-group" ng-repeat="person in people">
+    <search-result person-object="person" formatted-address-function="formatAddress(aperson)">* search results may be inaccurate</search-result>
 </div>
